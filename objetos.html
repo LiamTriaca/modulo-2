@@ -1,0 +1,46 @@
+<h1>Objetos en JavaScript</h1>
+
+<script >
+const crearProductos = function (n,p,s,d) {
+	let elProducto = new Object () //<--- Objeto Diferido
+ 		elProducto.nombre = n
+ 		elProducto.stock = s
+ 		elProducto.precio = p
+		elProducto.disponible= d
+
+	return (elProducto)
+
+}
+
+////////////////////////////////////////////////777
+
+
+	let nombre = "Cafe"
+	let stock = 600
+	let precio= 85.65
+	let disponible= false
+
+//Array
+ let producto = ["Jugo de Naranja",450 ,15.45 , true]
+ //Objetos
+ let otroProducto = { //<--- Objeto Literal
+ 	nombre : "Agua",
+ 	stock : 100,
+ 	precio: 175.60,
+ 	disponible:true 
+ }
+
+ let tercerProducto = new Object () //<--- Objeto Diferido
+ tercerProducto.nombre = "Alfajor de Maicena";
+ tercerProducto.stock = 150;
+ tercerProducto.precio =65.5;
+tercerProducto.disponible=false;
+// ¿Como automatizar esto? MIRAR HACIA ARRIBA EN LA FUNCIÓN
+
+let ultimoProducto = crearProductos("Te rojo", 75, 900, true);
+
+
+
+document.write (`El producto ${otroProducto.nombre}	vale ARS ${otroProducto.precio} C/u`)
+
+</script>
