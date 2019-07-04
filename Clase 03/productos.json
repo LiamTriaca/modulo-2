@@ -1,0 +1,6 @@
+{
+	"nombre" : "Café Torrado",
+	"stock" : 600,
+	"precio" : 85.65,
+	"disponible" :false
+}

@@ -1,0 +1,50 @@
+[
+	{
+		"nombre" : "Café Torrado",
+		"stock" : 600,
+		"precio" : 85.65,
+		"disponible" :false
+	},
+	{
+		"nombre" : "Jugo de Naranja",
+		"stock" : 450,
+		"precio" : 15.45,
+		"disponible" : true
+	},
+	{
+		"nombre" : "Agua finamente gasificada (baja en sodio)",
+		"stock" : 100,
+		"precio" : 175.60,
+		"disponible" : true
+	},
+	{
+		"nombre" :"Alfajor de Maicena",
+		"stock" : 150,
+		"precio" : 65.30,
+		"disponible" : false
+	},
+	{
+		"nombre" : "Té Rojo",
+		"precio" : 74.25,
+		"stock" : 900,
+		"disponible" : true
+	},
+	{
+		"nombre" : "Té Tilo",
+		"precio" : 55.69,
+		"stock" : 200,
+		"disponible" : false
+	},
+	{
+		"nombre" : "Submarino",
+		"precio" :  67.55,
+		"stock" : 260,
+		"disponible" : true
+	},
+	{
+		"nombre" : "Lemon Pie",
+		"precio" :  115.25,
+		"stock" : 500,
+		"disponible" : true
+	}
+]

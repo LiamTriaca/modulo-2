@@ -1,0 +1,75 @@
+<h1>Objetos en JavaScript</h1>
+<script src="producto.class.js"></script>
+<script>
+	const crearProducto = function(n, p, s, d){
+
+		let elProducto = new Object() //<-- Objeto diferido
+			//Propiedades (que es...)
+			elProducto.nombre = n
+			elProducto.stock = s
+			elProducto.precio = p
+			elProducto.disponible = d
+
+			//Metodos (que hace...)
+			elProducto.Mostrar = function(){
+				//document.write(`<p>El producto <strong>${elProducto.nombre}</strong> vale ARS ${elProducto.precio} c/u</p>`)
+				let ficha = document.createElement("ul")
+
+				let contenido = `
+								<li>Nombre: ${elProducto.nombre}</li>
+								<li>Precio: ARS${elProducto.precio}</li>
+								<li>Stock: ${elProducto.stock} unid.</li>
+								<li>Disponible: ${elProducto.disponible ? "SI" : "NO"}</li>
+								`
+				ficha.innerHTML = contenido
+
+				document.body.appendChild( ficha )
+			}
+			elProducto.Descuento = function(desc){
+				let descuento = (elProducto.precio * desc) / 100 //<-- Obtengo el descuento
+				
+				elProducto.precio -= descuento //<-- Aplico el descuento
+
+				elProducto.precio = Math.ceil( elProducto.precio ) //<-- Redondeo el precio
+			}
+
+		return elProducto
+	}
+///////////////////////////////////////
+	//Variables
+	let nombre = "Café Torrado"
+	let stock = 600
+	let precio = 85.65
+	let disponible = false
+
+	//Array
+	let unProducto = ["Jugo de Naranja", 450, 15.45, true]
+
+	//Objetos
+	let otroProducto = { //<-- Objeto literal
+		nombre : "Agua finamente gasificada (baja en sodio)",
+		stock : 100,
+		precio : 175.60,
+		disponible : true
+	}
+
+	let tercerProducto = new Object() //<-- Objeto diferido
+	tercerProducto.nombre = "Alfajor de Maicena"
+	tercerProducto.stock = 150
+	tercerProducto.precio = 65.30
+	tercerProducto.disponible = false
+
+	let ultimoProducto = crearProducto("Té Rojo", 74.25, 900, true)
+
+	//mostrarProducto(otroProducto.nombre, otroProducto.precio)
+	//mostrarProducto(tercerProducto.nombre, tercerProducto.precio)
+	//mostrarProducto(ultimoProducto.nombre, ultimoProducto.precio)
+
+	ultimoProducto.Descuento(30)
+	ultimoProducto.Mostrar()
+	let objProducto = new Producto("Te de Tilo", 55.69, 200, false)
+	let objProductoII = new Producto("Submarino", 67.55, 260, true)
+	let objProductoIII = new Producto("Lemon Pie", 115.25, 500, true)
+
+
+</script>

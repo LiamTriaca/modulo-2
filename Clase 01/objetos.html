@@ -1,0 +1,40 @@
+<h1>Objetos en JavaScript</h1>
+<script>
+	const crearProducto = function(n, p, s, d){
+
+		let elProducto = new Object() //<-- Objeto diferido
+			elProducto.nombre = n
+			elProducto.stock = s
+			elProducto.precio = p
+			elProducto.disponible = d
+
+		return elProducto
+	}
+///////////////////////////////////////
+	//Variables
+	let nombre = "Café Torrado"
+	let stock = 600
+	let precio = 85.65
+	let disponible = false
+
+	//Array
+	let unProducto = ["Jugo de Naranja", 450, 15.45, true]
+
+	//Objetos
+	let otroProducto = { //<-- Objeto literal
+		nombre : "Agua finamente gasificada (baja en sodio)",
+		stock : 100,
+		precio : 175.60,
+		disponible : true
+	}
+
+	let tercerProducto = new Object() //<-- Objeto diferido
+	tercerProducto.nombre = "Alfajor de Maicena"
+	tercerProducto.stock = 150
+	tercerProducto.precio = 65.30
+	tercerProducto.disponible = false
+
+	let ultimoProducto = crearProducto("Té Rojo", 74.25, 900, true)
+
+	document.write(`El producto ${ultimoProducto.nombre} vale ARS ${ultimoProducto.precio} c/u`)
+</script>
