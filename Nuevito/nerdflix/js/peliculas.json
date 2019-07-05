@@ -1,1 +1,50 @@
-peliculas.json
+[
+{
+  "titulo": "Toy story 4",
+  "estreno": "Metro City",
+  "descripcion": 2016,
+  "poster": "Super tower",
+  "trailer": true,
+  }
+  {
+  "titulo": "Toy story 3",
+  "estreno": "Metro City",
+  "descripcion": 2016,
+  "poster": "Super tower",
+  "trailer": true,
+  }
+  {
+  "titulo": "Toy story 2",
+  "estreno": "Metro City",
+  "descripcion": 2016,
+  "poster": "Super tower",
+  "trailer": true,
+  }
+  {
+  "titulo": "Toy story ",
+  "estreno": "Metro City",
+  "descripcion": 2016,
+  "poster": "Super tower",
+  "trailer": true,
+  }
+  {
+  "titulo": "Avengers: EndGame",
+  "estreno": "Metro City",
+  "descripcion": 2016,
+  "poster": "Super tower",
+  "trailer": true,
+  }
+  {
+  "titulo": "Captain American: Civil War",
+  "estreno": "Metro City",
+  "descripcion": 2016,
+  "poster": "Super tower",
+  "trailer": true,
+  }
+  {
+  "titulo": "La vida secreta de tus Mascotas",
+  "estreno": "Metro City",
+  "descripcion": 2016,
+  "poster": "Super tower",
+  "trailer": true,
+]
