@@ -1,4 +1,4 @@
-class pelicula {
+class Pelicula {
 	
 	constructor (t,e,d,p,tr){
 	this.titulo= t
@@ -19,7 +19,7 @@ class pelicula {
     	elemento.querySelector("img").src=this.poster
 
     	//3)Ocultar elemento
-    	elemento.classList.remove("hide")s
+    	elemento.classList.remove("hide")
 
     	//4) Anexar elementos
 
@@ -30,6 +30,53 @@ class pelicula {
     	
     }
 
+  
+    static parse (data){
+        console.log ("Ahora deberia convertir Object en Producto")
+        data= JSON.parse (data)
+        if (data instanceof Array){
+           /*Vieja Forma 
+           let peliculas = new Array()
+            data.forEach(item=> {
+                let pelicula = new pelicula(
+                item.idPelicula,
+                item.Titulo,
+                item.Estreno,
+                item.Descripcion,
+                item.Poster,
+                item.Trailer
+            )
+            }
+            peliculas.push(pelicula)
+        })
+            return peliculas
+    }
+    */
+
+
+//Nueva forma 
+         return data.map(item=>
+          new Pelicula (
+                item.idPelicula,
+                item.Titulo,
+                item.Estreno,
+                item.Descripcion,
+                item.Poster,
+                item.Trailer
+        )    
+        )
+        } else if ( data instanceof Object) {
+            let peliculas = new Pelicula
+                data.idPelicula,
+                data.Titulo,
+                data.Estreno,
+                data.Descripcion,
+                data.Poster,
+                data.Trailer
+         }
+return peliculas
+
+} else(){
+    return null
 }
-let unaPelicula= new pelicula ("Iron Man", "2008", "Hombre de Hierro", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5M3eXDEiqUg3_5HB2WU5iKJld4-lKYgUd20ZzLoTpalJamrsq", "https://www.youtube.com/watch?v=hDtJ-KXLngY")
-let otraPelicula= new pelicula ("Captain America: Civil War", "2016", "War between Captain America & Iron Man", "https://cloud10.todocoleccion.online/cine-posters-carteles/tc/2018/09/30/16/134915750.jpg"," https://www.youtube.com/watch?v=xnv__ogkt0M")
+}

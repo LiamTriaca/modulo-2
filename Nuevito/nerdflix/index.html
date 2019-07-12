@@ -51,14 +51,50 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/peliculas.class.js">
-			let unaPelicula= new pelicula ("Iron Man", "2008", "Hombre de Hierro", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5M3eXDEiqUg3_5HB2WU5iKJld4-lKYgUd20ZzLoTpalJamrsq", "https://www.youtube.com/watch?v=hDtJ-KXLngY")
+		<script src="js/peliculas.class.js"></script>
+		<script>
+			/*let unaPelicula= new pelicula ("Iron Man", "2008", "Hombre de Hierro", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5M3eXDEiqUg3_5HB2WU5iKJld4-lKYgUd20ZzLoTpalJamrsq", "https://www.youtube.com/watch?v=hDtJ-KXLngY")
 			
 			let otraPelicula= new pelicula ("Captain America: Civil War", "2016", "War between Captain America & Iron Man", "https://cloud10.todocoleccion.online/cine-posters-carteles/tc/2018/09/30/16/134915750.jpg"," https://www.youtube.com/watch?v=xnv__ogkt0M")
 
 			unaPelicula.mostrar()
 			otraPelicula.mostrar()
+			*/
+			
 
+				//Promesas en JS//
+
+				let compromiso = new Promise(function(ok,error){
+					if(!localStorage.getItem("_peliculas")){ // Si no hay un Local Storage... A EJECTUAR AJAX
+						//Incio Ajax
+						let ajax = new XMLHttpRequest ()
+
+						ajax.open ("GET", "https://api.myjson.com/bins/fiuhw")//Deberia ejectuarse UNA SOLA VEZ
+						ajax.onload = function(){//Evento
+							if (this.status == 200){ //RESPUESTA SATISFACTORIA DE CONEXION
+						//HACER MA GIA 
+ 							//let marvel = Pelicula.parse (this.response) //MOVEMOS DEBIDO A QUE LAS PELICULAS SE DEBEN CREAR EN EL THEN
+ 							localStorage.setItem("_peliculas", this.response)
+ 							ok(this.response)//Activa metodo Then, cumple promesa allí.
+							}
+							}
+							ajax.send()
+
+							
+						//Fin Ajax
+
+					} else { // Si efectivamente hay un Local Storage... 
+						ok(localStorage.getItem ("_peliculas"))
+					}
+
+				}) // Accion Principal asincronica
+
+				compromiso.then(function(data){
+					let marvel = Pelicula.parse (data)
+					marvel.forEach(peli=>peli.Mostrar())
+
+				})//Accion Que prometo hacer (si sale bien...)
+				//compromiso.catch(????)// Accion Que prometo hacer (si sale mal...)				
 		</script>
 	</body>
 </html>
