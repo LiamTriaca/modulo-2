@@ -1,4 +1,5 @@
 <script>
+	//AJAX en EcmaScript 5.1
 	let ajax= new XMLHttpRequest()
 	ajax.open ("Get", "https://api.myjson.com/bins/fiuhw")
 	ajax.onload= function () {
@@ -8,6 +9,18 @@
 		}
 	}
 	ajax.send()
+
+	//AJAX en EcmaScript 6
+	//Capa 1: Obtencion de datos
+	fetch("https://api.myjson.com/bins/fiuhw").then (function(data){
+	//Capa 2: Conversion de datos
+
+		return data.json()
+	}).then (function(peliculas){
+		//Capa 3: Uso de datos
+		console.table(peliculas)
+	})
+s
 
 
 </script>
